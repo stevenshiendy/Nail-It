@@ -97,7 +97,7 @@ const Signup = () => {
 
                         <div className="form-elem">
                             <label className="block font-mono text-xs text-background/50 uppercase tracking-widest mb-3 pl-1">
-                                Access Token (Password)
+                                Password
                             </label>
                             <input
                                 type="password"
@@ -112,7 +112,7 @@ const Signup = () => {
 
                         <button type="submit" className="form-elem w-full btn-magnetic bg-accent text-background rounded-2xl px-6 py-4 font-bold text-lg mt-4 font-sans group relative overflow-hidden">
                             <span className="relative z-10 flex items-center justify-center gap-3">
-                                Establish Connection
+                                Sign Up
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </button>

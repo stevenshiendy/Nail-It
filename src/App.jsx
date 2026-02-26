@@ -397,16 +397,11 @@ const NailShowcase = () => {
   const [current, setCurrent] = useState(0);
 
   const styles = [
-    { name: 'Magnetic Cat-Eye & Velvet Finishes' },
-    { name: 'Korean-Style 3D & Coquette' },
-    { name: 'Glazed Donut & Pearlescent' },
-    { name: 'Milky Whites & Sheer Neutrals' },
-    { name: 'Y2K Chrome & Edgy Metallics' },
-    { name: 'Micro French Tips' },
-    { name: 'Cozy Browns & Rich Cherry Reds' },
-    { name: 'Soft Floral & Watercolor Art' },
-    { name: 'Marble & Gemstone Textures' },
-    { name: 'Aura & Blush Ombre Gradients' }
+    { image: '/design-1.jpg' },
+    { image: '/design-2.jpg' },
+    { image: '/design-3.jpg' },
+    { image: '/design-4.jpg' },
+    { image: '/design-5.jpg' }
   ];
 
   useEffect(() => {
@@ -421,11 +416,13 @@ const NailShowcase = () => {
       {styles.map((style, index) => (
         <div
           key={index}
-          className={`absolute inset-0 flex items-center justify-center p-8 md:p-12 pb-16 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
         >
-          <div className={`transition-all duration-1000 delay-100 text-center ${index === current ? 'scale-100 blur-none opacity-100' : 'scale-95 blur-sm opacity-0'}`}>
-            <h4 className="font-serif italic text-4xl lg:text-5xl text-background leading-tight text-balance">{style.name}</h4>
-          </div>
+          <img
+            src={style.image}
+            alt={`Showcase Design ${index + 1}`}
+            className={`w-full h-full object-cover transition-all duration-1000 delay-100 ${index === current ? 'scale-100 blur-none opacity-100' : 'scale-[1.05] blur-md opacity-0'}`}
+          />
         </div>
       ))}
 
