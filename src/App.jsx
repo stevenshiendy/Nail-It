@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Fingerprint, Activity, Clock, ShieldCheck, Check, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Navbar = () => {
   const navRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +34,7 @@ const Navbar = () => {
         <a href="#philosophy" className="hover:text-accent transition-colors interactive">Philosophy</a>
         <a href="#protocol" className="hover:text-accent transition-colors interactive">Protocol</a>
       </div>
-      <button className={`btn-magnetic px-5 py-2 font-sans font-semibold text-sm rounded-full ${scrolled ? 'bg-accent text-background' : 'bg-background text-primary'
+      <button onClick={() => navigate('/signup')} className={`btn-magnetic px-5 py-2 font-sans font-semibold text-sm rounded-full ${scrolled ? 'bg-accent text-background' : 'bg-background text-primary'
         }`}>
         <span className="relative z-10">Sign Up</span>
       </button>
